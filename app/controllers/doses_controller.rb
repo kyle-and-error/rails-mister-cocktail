@@ -1,26 +1,27 @@
 class DosesController < ApplicationController
+  before_action :set_cocktail, only: [:new, :create]
   def new
     @dose = Dose.new
   end
 
   def create
     @dose = Dose.new(dose_params)
+    @dose.cocktail = @cocktail
 
-    respond_to do |format|
-      if @dose.save
-        format.html { redirect_to @dose, notice: 'dose was successfully created.' }
-        format.json { render :show, status: :created, location: @dose }
-      else
-        format.html { render :new }
-        format.json { render json: @dose.errors, status: :unprocessable_entity }
-      end
+    if @dose.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
     end
   end
 
   private
 
-  def cocktail_params
-    params.require(:cocktail).permit(:description
-    , :ingredient_id, :cocktail_id)
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:cocktail_id])
+  end
+
+  def dose_params
+    params.require(:dose).permit(:description, :ingredient_id, :cocktail_id)
   end
 end
