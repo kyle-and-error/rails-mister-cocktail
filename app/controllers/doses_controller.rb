@@ -1,4 +1,4 @@
-class DoseController < ApplicationController
+class DosesController < ApplicationController
   def new
     @dose = Dose.new
   end
@@ -20,6 +20,7 @@ class DoseController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:description, :ingredient_id, :cocktail_id)
+    params.require(:cocktail).permit(:description
+    , :ingredient_id, :cocktail_id)
   end
 end
