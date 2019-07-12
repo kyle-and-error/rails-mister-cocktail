@@ -1,11 +1,12 @@
 <h1>Cocktails</h1>
 <div class="d-flex">
-  <div class ="col-md-6 col-lg-4 cocktail-card">
-    <% @cocktails.each do |cocktail| %>
-      <li><%= cocktail.name %> | <%= link_to 'Show details', cocktail_path(cocktail) %></li>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, culpa veniam esse impedit harum quos, sunt nam dicta rem eum accusamus saepe quas modi voluptas, aliquid aperiam a. Fuga, nihil.</p>
 
+    <% @cocktails.each do |cocktail| %>
+      <div class="cocktail-card">
+        <div class ="cocktail-info">
+          <%= cocktail.name %>
+        </div>
+      </div>
     <% end %>
-  </div>
 </div>
 <%= link_to 'Create a new cocktail', cocktails_new_path %>
