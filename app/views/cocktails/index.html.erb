@@ -1,12 +1,17 @@
 <h1>Cocktails</h1>
 <div class="d-flex">
 
-    <% @cocktails.each do |cocktail| %>
-      <div class="cocktail-card">
-        <div class ="cocktail-info">
-          <%= cocktail.name %>
-        </div>
-      </div>
-    <% end %>
+  <% @cocktails.each do |cocktail| %>
+  <div class="col-md-6 col-lg-4 cocktail-card">
+
+    <div class ="cocktail-info">
+      <%= cocktail.name %>
+    </div>
+    <div class="cocktail-img">
+      <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" alt="" class="cocktail-img"> -->
+    </div>
+  </div>
+
+  <% end %>
 </div>
 <%= link_to 'Create a new cocktail', cocktails_new_path %>
