@@ -1,6 +1,22 @@
-<h1><%=@cocktail.name%></h1>
-<% @cocktail.doses.each do |dose| %>
-<p><%= dose.description %> of <%= dose.ingredient.name %></p>
+<div class="top-container">
+  <div class="container">
+    <div class="cocktail-img">
+    </div>
+    <div class="cocktail-show-info">
+      <h1><%=@cocktail.name%></h1>
+      <p><%= @cocktail.description %></p>
+    </div>
+  </div>
+</div>
+<div class="bottom-container">
+  <div class="container">
+  <div class="cocktail-show-doses">
+    <h3>Ingredients</h3>
+    <% @cocktail.doses.each do |dose| %>
+      <p><%= dose.description %> <%= dose.ingredient.name %> <% link_to  %><i class="fas fa-trash-alt"></i></p>
+    <% end %>
+  </div>
 
-<% end %>
-<%= link_to 'Add a new ingredient', new_cocktail_dose_path(@cocktail)%>
+  <%= link_to 'Add a new ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
+  </div>
+</div>

@@ -24,15 +24,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Add New Cocktail</a>
+            <%= link_to 'Create a new cocktail', cocktails_new_path %>
           </li>
         </ul>
       </div>
     </div>
-
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->

@@ -1,3 +1,32 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-container {
+  background: #76949F;
+  height: 400px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .cocktail-img {
+      margin-top: 20px;
+      margin-left: 16px;
+      background: red;
+      height: 420px;
+      width: 300px;
+    }
+    .cocktail-show-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+}
+
+}
+.bottom-container {
+  .container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

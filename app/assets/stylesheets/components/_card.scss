@@ -3,25 +3,70 @@
   flex-direction: row-reverse;
   background-size: cover;
   background-position: center;
-  color: white;
-  height: 180px;
+  background-color: white;
+  height: 200px;
+  width: 324px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-  .cocktail-img {
+  .cocktail-card-img {
+    left: -24px;
+    top: -18px;
     position: absolute;
     background: blue;
-    height: 30px;
-    width: 30px;
+    height: 200px;
+    width: 150px;
   }
   .cocktail-info{
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 22px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    width: 35%;
-    padding-right: 25px
+    width: 33%;
+    padding-right: 72px
   }
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
